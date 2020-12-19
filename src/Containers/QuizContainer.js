@@ -9,7 +9,7 @@ const QuizContainer = () => {
     const selected = useSelector(state => state.selected);
 
     return (
-        <div>
+        <div className="app">
             <div className="header">
 
                 <div className="title">
@@ -19,7 +19,7 @@ const QuizContainer = () => {
                     <h2>Profile</h2>
                 </div>
 
-            </div>
+            </div >
             <div>
                 {
                     selected ? <Quiz /> : <Topic />

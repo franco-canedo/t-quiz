@@ -36,7 +36,6 @@ const Quiz = () => {
 
     return (
         <div className='questionsDiv'>
-            <h1>Quiz</h1>
             {
                 questions.map((q, index) => {
                     return <Question key={index} q={q} 

@@ -37,7 +37,7 @@ const TopicList = (props) => {
                                         return <ListGroup.Item onClick={() => {
                                             slideOut(topic);
                                         }}
-                                        action variant="light"
+                                        action variant="dark"
                                         key={index}>
                                             <h4>{topic}</h4>
                                         </ListGroup.Item>

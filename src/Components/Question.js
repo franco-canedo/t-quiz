@@ -32,27 +32,35 @@ const Question = (props) => {
         return array;
     }
 
-    const propsChangeClassName = () => {
-        if (props.questionNumber === questionNumber) {
-            setClassName('questionSlideIn');
-        }
-    }
-
     const changeClassName = () => {
         setClassName('questionSlideOut');
+    }
+
+    const regEx = (q) => {
+        let replace = "&quot;";
+        let re = new RegExp(replace, "g");
+        let newStr = q.replace(re, "'");
+        return newStr;
     }
 
     const show = () => {
         if (props.questionNumber === props.index) {
             return <div className={questionClassName}>
-                <h2>{props.q.question}</h2>
-                <ul>
+                <div className="questionText">
+                    {/* <h2>{props.q.question}</h2> */}
+                    <h2>{regEx(props.q.question)}</h2>
+                    <p>Time Left: </p>
+                </div>
+
+                <div className="answerContainerDiv">
                     {
                         answers.map(answer => {
-                            return <li>{answer}</li>
+                            return <div className="answerDiv">
+                                <h3>{answer}</h3>
+                            </div>
                         })
                     }
-                </ul>
+                </div>
                 <button onClick={() => {
                     changeClassName();
                     setTimeout(() => {
