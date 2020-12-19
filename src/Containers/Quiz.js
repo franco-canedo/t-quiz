@@ -21,10 +21,6 @@ const Quiz = () => {
     const topic = useSelector(state => state.topic);
     const [questionNumber, setQuestionNumber] = useState(0);
 
-    const nextQuestion = () => {
-        setQuestionNumber(prevState => prevState.questionNumber + 1);
-    }
-
     useEffect(() => {
         axios.get(`${apis[`${topic}`]}`)
         .then(res => {
@@ -33,12 +29,20 @@ const Quiz = () => {
         }).catch(error => alert(error));
     }, []);
 
+    const nextQuestion = () => {
+        setQuestionNumber(prevState => prevState + 1);
+    }
+
+
     return (
         <div className='questionsDiv'>
             <h1>Quiz</h1>
             {
                 questions.map((q, index) => {
-                    return <Question key={index} q={q}/>
+                    return <Question key={index} q={q} 
+                    nextQuestion={nextQuestion} 
+                    questionNumber={questionNumber}
+                    index={index}/>
                 })
             }
         </div>

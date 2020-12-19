@@ -118,4 +118,36 @@ h4 {
 .question {
   border: double;
   text-align: center;
+  display: none;
+}
+
+.questionSlideIn {
+  
+  animation: Slide_Left_In 1.2s ease;
+  border: double;
+  text-align: center;
+}
+
+@keyframes Slide_Left_Out_Question {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(-1500px);
+    overflow: hidden;
+  }
+}
+
+@-webkit-keyframes Slide_Left_Out_Question {
+  to {
+      width:0;
+      height:0;
+      visibility: hidden;
+  }
+}
+
+.questionSlideOut {
+  animation: Slide_Left_Out_Question 1.2s ease .1s forwards;
+  border: double;
+  text-align: center;
 }
