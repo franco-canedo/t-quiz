@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 import { useDispatch } from 'react-redux';
 import { chooseTopic } from '../actions';
+import { topicSelect } from '../actions';
 
 const TopicList = (props) => {
 
@@ -14,8 +15,10 @@ const TopicList = (props) => {
     const [topics, setTopics] = useState(['Film', 'Music', 'Television', 'General Knowledge']);
     const dispatch = useDispatch();
 
-    const slideOut = () => {
+    const slideOut = (topic) => {
         setMenuClassName('topicMenuOut');
+        dispatch(chooseTopic(topic));
+        dispatch(topicSelect());
     }
 
     return (
@@ -32,8 +35,7 @@ const TopicList = (props) => {
                                 {
                                     topics.map((topic, index)=> {
                                         return <ListGroup.Item onClick={() => {
-                                            slideOut();
-                                            dispatch(chooseTopic(topic));
+                                            slideOut(topic);
                                         }}
                                         action variant="light">
                                             <h4>{topic}</h4>
