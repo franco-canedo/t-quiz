@@ -36,3 +36,118 @@
     transform: rotate(360deg);
   }
 }
+
+/* My Components  */
+
+.header {
+  border: double;
+  height: 100px;
+  text-align: center;
+  column-count: 2;
+}
+
+.title {
+  float: center;
+  margin: 20px;
+  border: dotted;
+}
+
+.profileButton {
+  text-align: right;
+  width: 15%;
+  border: dotted;
+  float: right;
+  margin: 20px;
+}
+
+/* Slides ///////////////////////////////// */
+
+@keyframes Slide_Left_In {
+  0%{
+    transform: translateX(1500px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes Slide_Left_Out {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(-1500px);
+  }
+}
+
+.topicMenuIn {
+  animation: Slide_Left_In 1.2s ease;
+  text-align: center;
+  margin-top: 10%;
+  border: dotted;
+
+}
+
+.topicMenuOut {
+  animation: Slide_Left_Out 1.2s ease;
+  text-align: center;
+  margin-top: 10%;
+  border: dotted;
+
+}
+
+.topicOptions {
+  margin-top: 40px;
+  width: 100%;
+  margin-left: 35%;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h4 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.questionsDiv {
+  text-align: center;
+  border: dotted;
+}
+
+.question {
+  border: double;
+  text-align: center;
+  display: none;
+}
+
+.questionSlideIn {
+  
+  animation: Slide_Left_In 1.2s ease;
+  border: double;
+  text-align: center;
+}
+
+@keyframes Slide_Left_Out_Question {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(-1500px);
+    overflow: hidden;
+  }
+}
+
+@-webkit-keyframes Slide_Left_Out_Question {
+  to {
+      width:0;
+      height:0;
+      visibility: hidden;
+  }
+}
+
+.questionSlideOut {
+  animation: Slide_Left_Out_Question 1.2s ease .1s forwards;
+  border: double;
+  text-align: center;
+}

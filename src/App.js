@@ -1,15 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React, { useState } from 'react';
+
+import QuizContainer from './Containers/QuizContainer';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from './actions';
 
-function App() {
+
+const App = () => {
+
+  const [quiz, setState] = useState(false);
 
   const dispatch = useDispatch();
 
   return (
-    <button onClick={() => dispatch(toggle())}>toggle</button>
+    <div>
+      <QuizContainer />
+    </div>
+
   );
 }
 
