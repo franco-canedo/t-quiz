@@ -110,3 +110,12 @@ h4 {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.questionsDiv {
+  text-align: center;
+  border: dotted;
+}
+
+.question {
+  border: double;
+  text-align: center;
+}
