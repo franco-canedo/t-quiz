@@ -15,6 +15,9 @@ const store = createStore(
 );
 
 const API_FILM = "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple";
+const API_MUSIC = "https://opentdb.com/api.php?amount=10&category=12&type=multiple";
+const API_TELEVISION = "https://opentdb.com/api.php?amount=10&category=14&type=multiple";
+const API_GENERAL_KNOWLEDGE = "https://opentdb.com/api.php?amount=10&category=9&type=multiple";
 
 ReactDOM.render(
   <React.StrictMode>

@@ -3,7 +3,7 @@ import './App.css';
 
 import React, { useState } from 'react';
 
-import Quiz from './Containers/Quiz';
+import QuizContainer from './Containers/QuizContainer';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from './actions';
 
@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div>
-      <Quiz />
+      <QuizContainer />
     </div>
 
   );
