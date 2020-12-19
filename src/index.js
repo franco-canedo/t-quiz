@@ -14,9 +14,11 @@ const store = createStore(
  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+const API_FILM = "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple";
+
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store} apiFilm={API_FILM}>
       <App/>
     </Provider>
   </React.StrictMode>,
