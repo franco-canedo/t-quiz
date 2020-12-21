@@ -11,23 +11,29 @@ const QuizContainer = () => {
     return (
         <div className="app">
             {
-                selected ? null : 
-                <div className="header">
-                    <div className="title">
-                        <h1>T.Quiz</h1>
-                    </div>
-                    <div className="profileButton">
-                        <h2>Profile</h2>
-                    </div>
+                selected ? null :
+                    <div className="header">
+                        <div className="title">
+                            <h1>T.Quiz</h1>
+                        </div>
+                        <div className="profileButton">
+                            <h2>Profile</h2>
+                        </div>
 
-                </div >
+                    </div >
             }
 
-            <div>
+            
+{
+                    selected ? <Quiz /> : <Topic />
+                }
+
+            
+            {/* <div>
                 {
                     selected ? <Quiz /> : <Topic />
                 }
-            </div>
+            </div> */}
 
         </div>
 

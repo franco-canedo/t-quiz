@@ -21,6 +21,7 @@ const StartButton = (props) => {
                setTimeout(() => props.enableTopicMenu(), 1000);
                
                }}>Trivia!</Button>
+               
        </div>
 
     );
