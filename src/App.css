@@ -40,16 +40,17 @@
 /* My Components  */
 
 .app {
-  background: black;
+  background: rgb(70, 70, 70);;
 }
 
 .header {
-  border: double;
+  border: none;
   height: 100px;
   text-align: center;
   column-count: 2;
-  background: linear-gradient(to right, #141414, #313031, #393a3a);
-  color: whitesmoke;
+  background: blanchedalmond;
+  color: black;
+  box-shadow: 10px 5px;
 }
 
 .title {
@@ -90,7 +91,7 @@
   animation: Slide_Left_In 1.2s ease;
   text-align: center;
   color: whitesmoke; 
-  background: black;
+  background: rgb(70, 70, 70);
   padding: 15%;
   padding-bottom: 30%;
 }
@@ -99,7 +100,7 @@
   animation: Slide_Left_Out 1.2s ease;
   text-align: center;
   color: whitesmoke;
-  background: black;
+  background: rgb(70, 70, 70);
   padding: 15%;
   padding-bottom: 30%;
 }
@@ -116,6 +117,10 @@ h1 {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 h4 {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -123,7 +128,7 @@ h4 {
 .questionsDiv {
   text-align: center;
   color: whitesmoke;
-  background: black;
+  background: rgb(70, 70, 70);;
 }
 
 .question {
@@ -136,7 +141,7 @@ h4 {
   animation: Slide_Left_In 1s ease;
   text-align: center;
   height: 100%;
-  background: black;
+  background: rgb(70, 70, 70);;
 }
 
 @keyframes Slide_Left_Out_Question {
@@ -162,7 +167,7 @@ h4 {
   text-align: center;
   height: 100%;
   padding-bottom: 20%;
-  background:black;
+  background:rgb(70, 70, 70);;
 }
 
 .answerContainerDiv {
@@ -173,6 +178,7 @@ h4 {
 
 .questionText {
   padding: 3%;
+  box-shadow: 10px 5px black;
   background: linear-gradient(to right, #1e751e80, #a0a82669, #a72e1ea1);
 }
 
@@ -201,7 +207,7 @@ h4 {
   box-shadow: blanchedalmond 5px 5px;
   border: outset 1px;
   padding: 5%;
-  background: rgb(87, 86, 86);
+  background: rgba(13, 51, 133, 0.61);
   margin: 2%;
   margin-bottom: 5%;
   /* height: 20% !important; */
@@ -219,9 +225,9 @@ h4 {
   box-shadow: blanchedalmond 5px 5px;
   border: outset 1px;
   padding: 5%;
-  background: rgb(87, 86, 86);
+  background: rgba(13, 51, 133, 0.61);
   margin: 2%;
-  transform: translateY(-20px);
+  transform: translateY(-15px);
   box-shadow:
     inset 0 0 60px whitesmoke,
     inset 20px 0 80px#f2d3f0,
@@ -238,7 +244,7 @@ h4 {
   box-shadow: blanchedalmond 5px 5px;
   border: outset 1px;
   padding: 5%;
-  background: rgb(87, 86, 86);
+  background: rgba(13, 51, 133, 0.61);
   margin: 2%;
   /* height: 20% !important; */
 }
