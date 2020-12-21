@@ -40,7 +40,7 @@
 /* My Components  */
 
 .app {
-  background: linear-gradient(to right, #141414, #313031, #393a3a);
+  background: black;
 }
 
 .header {
@@ -89,19 +89,19 @@
 .topicMenuIn {
   animation: Slide_Left_In 1.2s ease;
   text-align: center;
-  color: whitesmoke;
-  margin-top: 10%;
-  background: linear-gradient(to right, #141414, #313031, #393a3a);
-
+  color: whitesmoke; 
+  background: black;
+  padding: 15%;
+  padding-bottom: 30%;
 }
 
 .topicMenuOut {
   animation: Slide_Left_Out 1.2s ease;
   text-align: center;
   color: whitesmoke;
-  margin-top: 10%;
-  background: linear-gradient(to right, #141414, #313031, #393a3a);
-
+  background: black;
+  padding: 15%;
+  padding-bottom: 30%;
 }
 
 .topicOptions {
@@ -109,7 +109,7 @@
   width: 100%;
   margin-left: 35%;
   color: whitesmoke;
-  background: linear-gradient(to right, #141414, #313031, #393a3a);
+  background: linear-gradient(to right, #141414, #413f41, #9ba1a1);
 }
 
 h1 {
@@ -123,7 +123,7 @@ h4 {
 .questionsDiv {
   text-align: center;
   color: whitesmoke;
-  background: linear-gradient(to right, #141414, #313031, #393a3a);
+  background: black;
 }
 
 .question {
@@ -132,7 +132,7 @@ h4 {
 }
 
 .questionSlideIn {
-  
+  padding-bottom: 10%;
   animation: Slide_Left_In 1.2s ease;
   text-align: center;
   height: 100%;
@@ -160,6 +160,7 @@ h4 {
   animation: Slide_Left_Out_Question 1.2s ease .1s forwards;
   text-align: center;
   height: 100%;
+  padding-bottom: 10%;
 }
 
 .answerContainerDiv {
@@ -208,15 +209,6 @@ h4 {
   transition: transform 300ms;
   transform: translate3d(0, calc(1% - 1rem), 0);
   /* transform: translateY(-20px); */
-  box-shadow:
-    inset 0 0 60px whitesmoke,
-    inset 20px 0 80px#f2d3f0,
-    inset -20px 0 80px #0ff,
-    inset 20px 0 300px #f2d3f0,
-    inset -20px 0 300px #0ff,
-    0 0 10px #990000,
-    -10px 0 10px #f0f,
-    10px 0 10px #0ff;
 }
 
 .answerDivSelected {
@@ -251,15 +243,7 @@ h4 {
 .answerDivDeselect:hover {
   transition: transform 300ms;
   transform: translate3d(0, calc(1% - 1rem), 0);
-  box-shadow:
-    inset 0 0 60px whitesmoke,
-    inset 20px 0 80px#f2d3f0,
-    inset -20px 0 80px #0ff,
-    inset 20px 0 300px #f2d3f0,
-    inset -20px 0 300px #0ff,
-    0 0 10px #990000,
-    -10px 0 10px #f0f,
-    10px 0 10px #0ff;
+  
 }
 
 @keyframes Slide_Up {
@@ -273,10 +257,22 @@ h4 {
 
 .h1timer {
   color: white;  
+  font-size: 40px;
 }
 
 .h1timerRed {
   color: red;
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 500px) {
+  .h1timer {
+    font-size: 20px;
+  }
+
+  .h1timerRed {
+    font-size: 20px;
+  }
 }
 
 
@@ -285,14 +281,22 @@ h4 {
     transform: translateX(0px);
   }
   100%{
-    transform: translateX(500%);
+    transform: translateX(900%);
   }
 }
 
 .timerDiv {
-  animation: Slide_Right_Timer 10s ease;
+  animation: Slide_Right_Timer 10s ease-in-out;
   border: outset;
   width: 10%;
+}
+
+.finish {
+  animation: Slide_Left_In 1.2s ease;
+  text-align: center;
+  color: whitesmoke;
+  padding: 21%;
+  background: linear-gradient(to right, #39476e, #313031, #393a3a);
 }
 
 

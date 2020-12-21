@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Answer from './Answer';
 import Timer from './Timer';
+import Button from 'react-bootstrap/Button';
+import { useDispatch } from 'react-redux'
+import { addPoint } from '../actions';
+
 
 const Question = (props) => {
 
     const [answers, setAnswers] = useState([]);
     const [questionClassName, setClassName] = useState('questionSlideIn');
     const [questionNumber, setQuestionNumber] = useState(0);
+    const [selectedAnswer, setSelectedAnswer] = useState('');
+    const dispatch = useDispatch();
     
 
     useEffect(() => {
@@ -46,28 +52,49 @@ const Question = (props) => {
         return newStr;
     }
 
+    const checkAnswer = () => {
+        console.log(selectedAnswer, props.q.correct_answer)
+        if (selectedAnswer === props.q.correct_answer) {
+            dispatch(addPoint());
+        }
+    }
+
+    const selectAnswer = (answer) => {
+        setSelectedAnswer(answer);
+    }
+
+    const checkFinish = () => {
+        if (props.questionNumber === 9) {
+            props.finish();
+        }
+    }
+
     const show = () => {
         if (props.questionNumber === props.index) {
             return <div className={questionClassName}>
                 <div className="questionText">
                     {/* <h2>{props.q.question}</h2> */}
                     <p className="h2Question">{regEx(props.q.question)}</p>
-                    <Timer/>
+                    <Timer changeClassName={changeClassName}
+                    nextQuestion={props.nextQuestion}/>
                 </div>
 
                 <div className="answerContainerDiv">
                     {
                         answers.map(answer => {
-                            return <Answer answer={answer}/>
+                            return <Answer selectAnswer={selectAnswer}
+                            answer={answer}/>
                         })
                     }
                 </div>
-                <button onClick={() => {
+                <Button onClick={() => {
+                    checkAnswer();
                     changeClassName();
                     setTimeout(() => {
                         props.nextQuestion();
+                        checkFinish();
                     }, 1000);
-                }}>sumbit</button>
+                }} variant="primary">Submit</Button>
             </div>
         }
     }

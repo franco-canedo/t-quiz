@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Timer = () => {
+const Timer = (props) => {
     const [timeLeft, setTimeLeft] = useState(10);
     const [h1ClassName, setClassName] = useState('h1timer');
 
@@ -8,6 +8,10 @@ const Timer = () => {
     useEffect(() => {
         if(!timeLeft) {
             // restart makes the modal appear
+            props.changeClassName();
+            setTimeout(() => {
+                props.nextQuestion();
+            }, 1000);
             return;
         }
         const timer = setInterval(() => {
@@ -29,7 +33,7 @@ const Timer = () => {
 
     return (
         <div className="timerDiv">
-            <h1 className={h1ClassName}>{timeLeft}</h1>
+            <p className={h1ClassName}>{timeLeft}</p>
         </div>
         
     )

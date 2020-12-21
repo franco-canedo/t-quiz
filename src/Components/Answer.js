@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Answer = ({answer}) => {
+const Answer = (props) => {
     const [selected, setSelected] = useState(false);
     const [className, setClassName] = useState("answerDiv");
 
@@ -15,9 +15,18 @@ const Answer = ({answer}) => {
 
     }
 
+    const regEx = (answer) => {
+        let replace = /&quot;|&#039;/
+        let re = new RegExp(replace, "g");
+        let newStr = answer.replace(re, "'");
+        return newStr;
+    }
+
     return (
-        <div className={className} onClick={classNameChange}>
-            <p className="h2Question">{answer}</p>
+        <div className={className} 
+        onClick={props.selectAnswer(props.answer)}
+        onClick={classNameChange}> 
+            <p className="h2Question">{regEx(props.answer)}</p>
         </div>
     )
 }

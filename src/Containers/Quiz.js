@@ -14,39 +14,57 @@ const Quiz = () => {
         Film: "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple",
         Music: "https://opentdb.com/api.php?amount=10&category=12&type=multiple",
         Television: "https://opentdb.com/api.php?amount=10&category=14&type=multiple",
-        'General Knowledge':  "https://opentdb.com/api.php?amount=10&category=9&type=multiple",
+        'General Knowledge': "https://opentdb.com/api.php?amount=10&category=9&type=multiple",
     })
 
     const [questions, setQuestions] = useState([]);
     const topic = useSelector(state => state.topic);
     const [questionNumber, setQuestionNumber] = useState(0);
+    const [finish, setFinish] = useState(false);
+    const score = useSelector(state => state.score);
 
     useEffect(() => {
         axios.get(`${apis[`${topic}`]}`)
-        .then(res => {
-            console.log(res.data.results);
-            setQuestions(res.data.results);
-        }).catch(error => alert(error));
+            .then(res => {
+                console.log(res.data.results);
+                setQuestions(res.data.results);
+            }).catch(error => alert(error));
     }, []);
 
     const nextQuestion = () => {
         setQuestionNumber(prevState => prevState + 1);
     }
 
+    const finishFunc = () => {
+        setFinish(true);
+    }
+
 
     return (
-        <div className='questionsDiv'>
+        <>
             {
-                questions.map((q, index) => {
-                    return <Question key={index} q={q} 
-                    nextQuestion={nextQuestion} 
-                    questionNumber={questionNumber}
-                    index={index}/>
-                })
-            }
-        </div>
+                finish ? 
+                <div className='finish'>
+                    <h1>You got {score}/10!</h1>
+                </div>
+                : 
+                <div className='questionsDiv'>
+                    {
+                        questions.map((q, index) => {
+                            return <Question key={index} q={q}
+                                nextQuestion={nextQuestion}
+                                questionNumber={questionNumber}
+                                index={index}
+                                finish={finishFunc} />
+                        })
+                    }
+                </div>
 
-    
+            }
+        </>
+
+
+
     )
 };
 
