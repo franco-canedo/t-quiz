@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Answer from './Answer';
 import Timer from './Timer';
 import Button from 'react-bootstrap/Button';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import { addPoint } from '../actions';
 
 
@@ -11,10 +11,9 @@ const Question = (props) => {
     const [answers, setAnswers] = useState([]);
     const [questionClassName, setClassName] = useState('questionSlideIn');
     const [questionNumber, setQuestionNumber] = useState(0);
-    const [selectedAnswer, setSelectedAnswer] = useState('');
     const dispatch = useDispatch();
+    const selection = useSelector(state => state.selection);
     
-
     useEffect(() => {
         const array = [];
         props.q.incorrect_answers.forEach(element => {
@@ -22,11 +21,7 @@ const Question = (props) => {
         });
         array.push(props.q.correct_answer);
         setAnswers(shuffle(array));
-        console.log(props.questionNumber, props.index);
         setQuestionNumber(props.index);
-        // if (props.questionNumber === props.index) {
-        //     setClassName('questionSlideIn');
-        // }
     }, []);
 
     const shuffle = (array) => {
@@ -53,18 +48,13 @@ const Question = (props) => {
     }
 
     const checkAnswer = () => {
-        console.log(selectedAnswer, props.q.correct_answer)
-        if (selectedAnswer === props.q.correct_answer) {
+        if (selection === props.q.correct_answer) {
             dispatch(addPoint());
         }
     }
 
-    const selectAnswer = (answer) => {
-        setSelectedAnswer(answer);
-    }
-
     const checkFinish = () => {
-        if (props.questionNumber === 9) {
+        if (props.questionNumber === 8) {
             props.finish();
         }
     }
@@ -76,25 +66,26 @@ const Question = (props) => {
                     {/* <h2>{props.q.question}</h2> */}
                     <p className="h2Question">{regEx(props.q.question)}</p>
                     <Timer changeClassName={changeClassName}
-                    nextQuestion={props.nextQuestion}/>
+                    nextQuestion={props.nextQuestion}
+                    checkAnswer={checkAnswer}
+                    checkFinish={checkFinish}/>
                 </div>
 
                 <div className="answerContainerDiv">
                     {
-                        answers.map(answer => {
-                            return <Answer selectAnswer={selectAnswer}
-                            answer={answer}/>
+                        answers.map((answer, index) => {
+                            return <Answer key={index} answer={answer}/>
                         })
                     }
                 </div>
-                <Button onClick={() => {
+                {/* <Button onClick={() => {
                     checkAnswer();
                     changeClassName();
                     setTimeout(() => {
                         props.nextQuestion();
                         checkFinish();
                     }, 1000);
-                }} variant="primary">Submit</Button>
+                }} variant="outline-primary" size="lg" block>Submit</Button> */}
             </div>
         }
     }

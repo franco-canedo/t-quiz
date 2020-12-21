@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { selection } from '../actions';
 
 const Answer = (props) => {
     const [selected, setSelected] = useState(false);
     const [className, setClassName] = useState("answerDiv");
+    const dispatch = useDispatch();
 
     const classNameChange = () => {
+        dispatch(selection(props.answer));
         setSelected(prevState => !prevState);
         if (className === "answerDiv" || className === "answerDivDeselect") {
             setClassName("answerDivSelected");
         } else {
             setClassName("answerDivDeselect");
         }
-        
-
     }
 
     const regEx = (answer) => {
@@ -24,7 +26,6 @@ const Answer = (props) => {
 
     return (
         <div className={className} 
-        onClick={props.selectAnswer(props.answer)}
         onClick={classNameChange}> 
             <p className="h2Question">{regEx(props.answer)}</p>
         </div>

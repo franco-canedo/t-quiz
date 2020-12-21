@@ -132,10 +132,11 @@ h4 {
 }
 
 .questionSlideIn {
-  padding-bottom: 10%;
-  animation: Slide_Left_In 1.2s ease;
+  padding-bottom: 20%;
+  animation: Slide_Left_In 1s ease;
   text-align: center;
   height: 100%;
+  background: black;
 }
 
 @keyframes Slide_Left_Out_Question {
@@ -157,10 +158,11 @@ h4 {
 }
 
 .questionSlideOut {
-  animation: Slide_Left_Out_Question 1.2s ease .1s forwards;
+  animation: Slide_Left_Out_Question 1s ease .1s forwards;
   text-align: center;
   height: 100%;
-  padding-bottom: 10%;
+  padding-bottom: 20%;
+  background:black;
 }
 
 .answerContainerDiv {
@@ -171,7 +173,7 @@ h4 {
 
 .questionText {
   padding: 3%;
-  background: linear-gradient(to right, #174666, #57667e, #857363);
+  background: linear-gradient(to right, #1e751e80, #a0a82669, #a72e1ea1);
 }
 
 .h2Question {
@@ -201,6 +203,7 @@ h4 {
   padding: 5%;
   background: rgb(87, 86, 86);
   margin: 2%;
+  margin-bottom: 5%;
   /* height: 20% !important; */
 }
 
@@ -296,7 +299,12 @@ h4 {
   text-align: center;
   color: whitesmoke;
   padding: 21%;
+  padding-bottom: 30%;
   background: linear-gradient(to right, #39476e, #313031, #393a3a);
+}
+
+.backHomeDiv {
+  margin-top: 10%;
 }
 
 

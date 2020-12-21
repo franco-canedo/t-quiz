@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 const Timer = (props) => {
-    const [timeLeft, setTimeLeft] = useState(10);
+    const [timeLeft, setTimeLeft] = useState(9);
     const [h1ClassName, setClassName] = useState('h1timer');
 
 
     useEffect(() => {
         if(!timeLeft) {
-            // restart makes the modal appear
+            props.checkAnswer();   
             props.changeClassName();
             setTimeout(() => {
                 props.nextQuestion();
+                props.checkFinish();
             }, 1000);
             return;
         }

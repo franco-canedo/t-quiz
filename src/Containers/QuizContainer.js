@@ -10,16 +10,19 @@ const QuizContainer = () => {
 
     return (
         <div className="app">
-            <div className="header">
+            {
+                selected ? null : 
+                <div className="header">
+                    <div className="title">
+                        <h1>T.Quiz</h1>
+                    </div>
+                    <div className="profileButton">
+                        <h2>Profile</h2>
+                    </div>
 
-                <div className="title">
-                    <h1>T.Quiz</h1>
-                </div>
-                <div className="profileButton">
-                    <h2>Profile</h2>
-                </div>
+                </div >
+            }
 
-            </div >
             <div>
                 {
                     selected ? <Quiz /> : <Topic />
