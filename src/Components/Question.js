@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import Answer from './Answer';
+import Timer from './Timer';
 
 const Question = (props) => {
 
     const [answers, setAnswers] = useState([]);
     const [questionClassName, setClassName] = useState('questionSlideIn');
     const [questionNumber, setQuestionNumber] = useState(0);
+    
 
     useEffect(() => {
         const array = [];
@@ -37,7 +40,7 @@ const Question = (props) => {
     }
 
     const regEx = (q) => {
-        let replace = "&quot;";
+        let replace = /&quot;|&#039;/
         let re = new RegExp(replace, "g");
         let newStr = q.replace(re, "'");
         return newStr;
@@ -48,16 +51,14 @@ const Question = (props) => {
             return <div className={questionClassName}>
                 <div className="questionText">
                     {/* <h2>{props.q.question}</h2> */}
-                    <h2>{regEx(props.q.question)}</h2>
-                    <p>Time Left: </p>
+                    <p className="h2Question">{regEx(props.q.question)}</p>
+                    <Timer/>
                 </div>
 
                 <div className="answerContainerDiv">
                     {
                         answers.map(answer => {
-                            return <div className="answerDiv">
-                                <h3>{answer}</h3>
-                            </div>
+                            return <Answer answer={answer}/>
                         })
                     }
                 </div>
@@ -74,6 +75,7 @@ const Question = (props) => {
     return (
         <>
             {show()}
+            
         </>
 
     )
