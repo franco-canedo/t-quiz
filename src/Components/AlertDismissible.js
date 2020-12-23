@@ -11,11 +11,11 @@ const AlertDismissible = () => {
                 <Alert.Heading>Only one Answer!</Alert.Heading>
                 
                 <hr />
-                <div className="d-flex justify-content-end">
+                {/* <div className="d-flex justify-content-end">
                     <Button onClick={() => setShow(false)} variant="outline-success">
                         Close
             </Button>
-                </div>
+                </div> */}
             </Alert>
 
             

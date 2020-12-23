@@ -120,7 +120,7 @@ const Question = (props) => {
                         checkFinish();
                     }, 1000);
                 }} variant="outline-primary" size="lg" block>Submit</Button> */}
-                <Button variant="outline-primary" size="lg" block disabled></Button>
+                {/* <Button variant="outline-primary" size="lg" block disabled></Button> */}
             </div>
         }
     }
