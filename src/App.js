@@ -17,6 +17,7 @@ const App = () => {
   return (
     <div>
       <QuizContainer />
+      
     </div>
 
   );

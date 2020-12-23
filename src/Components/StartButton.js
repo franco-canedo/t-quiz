@@ -14,11 +14,14 @@ const StartButton = (props) => {
     return (
        <div className={menuClassName}>
            <h1>Ready to Play?</h1>
-           <Button variant="dark" onClick={() => {
+           <br></br>
+           <Button variant="outline-primary" size="lg" block 
+           onClick={() => {
                slideOut();
                setTimeout(() => props.enableTopicMenu(), 1000);
                
                }}>Trivia!</Button>
+               
        </div>
 
     );

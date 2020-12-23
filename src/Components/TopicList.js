@@ -9,11 +9,15 @@ import { useDispatch } from 'react-redux';
 import { chooseTopic } from '../actions';
 import { topicSelect } from '../actions';
 
+import useSound from 'use-sound';
+import beep from '../sounds/beep.mp3';
+
 const TopicList = (props) => {
 
     const [menuClassName, setMenuClassName] = useState('topicMenuIn');
     const [topics, setTopics] = useState(['Film', 'Music', 'Television', 'General Knowledge']);
     const dispatch = useDispatch();
+    const [play] = useSound(beep);
 
     const slideOut = (topic) => {
         setMenuClassName('topicMenuOut');
@@ -36,8 +40,9 @@ const TopicList = (props) => {
                                     topics.map((topic, index)=> {
                                         return <ListGroup.Item onClick={() => {
                                             slideOut(topic);
+                                            play();
                                         }}
-                                        action variant="light"
+                                        action variant="dark"
                                         key={index}>
                                             <h4>{topic}</h4>
                                         </ListGroup.Item>
