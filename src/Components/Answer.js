@@ -9,6 +9,8 @@ const Answer = (props) => {
 
     const classNameChange = () => {
         dispatch(selection(props.answer));
+        props.onlyOneAnswer(props.index);
+        // props.showAlert();
         setSelected(prevState => !prevState);
         if (className === "answerDiv" || className === "answerDivDeselect") {
             setClassName("answerDivSelected");

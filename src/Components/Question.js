@@ -4,11 +4,18 @@ import Timer from './Timer';
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPoint } from '../actions';
+import AlertDismissible from './AlertDismissible';
 
 
 const Question = (props) => {
 
     const [answers, setAnswers] = useState([]);
+    const [oneAnswerCheck, setOneCheck] = useState({
+        1: false,
+        2: false,
+        3: false,
+        4: false,
+    });
     const [questionClassName, setClassName] = useState('questionSlideIn');
     const [questionNumber, setQuestionNumber] = useState(0);
     const dispatch = useDispatch();
@@ -59,6 +66,28 @@ const Question = (props) => {
         }
     }
 
+    const onlyOneAnswer = (index) => {
+        setOneCheck(prevState => {
+            return {...prevState, [index]: !prevState[index]}
+        });
+    }
+
+    const showAlert = () => {
+        let i = 0;
+        for (const key in oneAnswerCheck) {
+            if (oneAnswerCheck[key] === true) {
+                i = i + 1;
+            }
+        }
+
+        if (i >= 2) {
+           return <AlertDismissible/>
+            // alert('wrong');
+        }
+    }
+
+
+
     const show = () => {
         if (props.questionNumber === props.index) {
             return <div className={questionClassName}>
@@ -74,10 +103,15 @@ const Question = (props) => {
                 <div className="answerContainerDiv">
                     {
                         answers.map((answer, index) => {
-                            return <Answer key={index} answer={answer}/>
+                            return <Answer key={index} 
+                            answer={answer}
+                            index={index}
+                            onlyOneAnswer={onlyOneAnswer}
+                            showAlert={showAlert}/>
                         })
                     }
                 </div>
+                {showAlert()}
                 {/* <Button onClick={() => {
                     checkAnswer();
                     changeClassName();

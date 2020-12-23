@@ -23,12 +23,12 @@ const QuizContainer = () => {
                     </div >
             }
 
-            
-{
-                    selected ? <Quiz /> : <Topic />
-                }
 
-            
+            {
+                selected ? <Quiz /> : <Topic />
+            }
+
+
             {/* <div>
                 {
                     selected ? <Quiz /> : <Topic />
