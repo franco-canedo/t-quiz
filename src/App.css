@@ -287,6 +287,23 @@ h4 {
   
 }
 
+@media only screen and (max-width: 500px) {
+  .answerDivSelected {
+    transform: translateY(0px);
+  }
+
+  .answerDivDeselect:hover {
+    transition: transform 0ms;
+    transform: translate3d(0, calc(0% - 0rem), 0);
+    
+  }
+
+  .answerDiv:hover {
+    transition: transform 0ms;
+    transform: translate3d(0, calc(0% - 0rem), 0);
+  }
+  }
+
 @keyframes Slide_Up {
   0%{
     transform: translateY(0px);
