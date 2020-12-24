@@ -106,11 +106,26 @@
 }
 
 .topicOptions {
+  text-align: center;
   margin-top: 40px;
   width: 100%;
   margin-left: 35%;
   color: whitesmoke;
   background: rgb(70, 70, 70);
+}
+
+@media only screen and (max-width: 500px) {
+  .topicOptions{
+    margin-left: 0%;
+  }
+
+  .topicMenuIn {
+    padding-bottom: 80%;
+  }
+
+  .topicMenuOut {
+    padding-bottom: 80%;
+  }
 }
 
 h1 {
@@ -188,7 +203,24 @@ h4 {
 
 @media only screen and (max-width: 500px) {
   .h2Question {
-    font-size: 20px !important;
+    font-size: 15px !important;
+  }
+
+  .questionText {
+    margin-bottom: 20px;
+  }
+
+
+  .questionSlideIn {
+    padding-bottom: 60%;
+  }
+
+  .questionSlideOut {
+    padding-bottom: 60%;
+  }
+
+  .finish {
+    padding-bottom: 80% !important;
   }
 }
 
@@ -314,24 +346,6 @@ h4 {
 }
 
 /* /////////////////// */
-
-/* .app {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-} */
 
 
 
