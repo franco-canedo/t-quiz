@@ -39,8 +39,16 @@
 
 /* My Components  */
 
+:root {
+  --blue:#3CDBFA;
+  --white: whitesmoke;
+  --green: #8CF555;
+  --purple: #9842E3;
+  --radius: 50px;
+}
+
 .app {
-  background: rgb(70, 70, 70);;
+  background: var(--white);;
 }
 
 .header {
@@ -48,8 +56,8 @@
   height: 100px;
   text-align: center;
   column-count: 2;
-  background: blanchedalmond;
-  color: black;
+  background: var(--white);
+  color: var(--purple);
   box-shadow: 10px 5px;
 }
 
@@ -90,7 +98,7 @@
 .topicMenuIn {
   animation: Slide_Left_In 1.2s ease;
   text-align: center;
-  color: whitesmoke; 
+  color: var(--blue); 
   /* background: rgb(70, 70, 70); */
   padding: 15%;
   padding-bottom: 30%;
@@ -99,8 +107,8 @@
 .topicMenuOut {
   animation: Slide_Left_Out 1.2s ease;
   text-align: center;
-  color: whitesmoke;
-  background: rgb(70, 70, 70);
+  color: var(--blue);
+  background: var(--white);
   padding: 15%;
   padding-bottom: 30%;
 }
@@ -110,8 +118,8 @@
   margin-top: 40px;
   width: 100%;
   margin-left: 35%;
-  color: whitesmoke;
-  background: rgb(70, 70, 70);
+  color: var(--blue);
+  background:var(--white);
 }
 
 @media only screen and (max-width: 500px) {
@@ -142,8 +150,8 @@ h4 {
 
 .questionsDiv {
   text-align: center;
-  color: whitesmoke;
-  background: rgb(70, 70, 70);;
+  color: black;
+  background: var(--white);
 }
 
 .question {
@@ -156,7 +164,7 @@ h4 {
   animation: Slide_Left_In 1s ease;
   text-align: center;
   height: 100%;
-  background: rgb(70, 70, 70);;
+  background: var(--white);
 }
 
 @keyframes Slide_Left_Out_Question {
@@ -182,7 +190,7 @@ h4 {
   text-align: center;
   height: 100%;
   padding-bottom: 20%;
-  background:rgb(70, 70, 70);;
+  background:var(--white);
 }
 
 .answerContainerDiv {
@@ -194,7 +202,7 @@ h4 {
 .questionText {
   padding: 3%;
   box-shadow: 10px 5px black;
-  background: linear-gradient(to right, #1e751e80, #a0a82669, #a72e1ea1);
+  background: linear-gradient(to right, #8CF555, #F0D33A, #FA643C);
 }
 
 .h2Question {
@@ -235,31 +243,34 @@ h4 {
 }
 
 .answerDiv {
+  border-radius: var(--radius);
   animation: Slide_Left_Answer 2s ease;
   box-shadow: blanchedalmond 5px 5px;
   border: outset 1px;
   padding: 5%;
-  background: rgba(13, 51, 133, 0.61);
+  background: var(--blue);
   margin: 2%;
   margin-bottom: 5%;
-  /* height: 20% !important; */
+  break-inside: avoid-column;
 }
 
 
 .answerDiv:hover {
+  border-radius: var(--radius);
   transition: transform 300ms;
   transform: translate3d(0, calc(1% - 1rem), 0);
   /* transform: translateY(-20px); */
 }
 
 .answerDivSelected {
+  border-radius: var(--radius);
   break-inside: avoid-column;
   box-shadow: blanchedalmond 5px 5px;
   border: outset 1px;
   padding: 5%;
-  background: rgba(13, 51, 133, 0.61);
+  background: var(--blue);
   margin: 2%;
-  transform: translateY(-15px);
+  /* transform: translateY(-15px); */
   box-shadow:
     inset 0 0 60px whitesmoke,
     inset 20px 0 80px#f2d3f0,
@@ -272,16 +283,18 @@ h4 {
 }
 
 .answerDivDeselect {
+  border-radius: var(--radius);
   break-inside: avoid-column;
   box-shadow: blanchedalmond 5px 5px;
   border: outset 1px;
   padding: 5%;
-  background: rgba(13, 51, 133, 0.61);
+  background: var(--blue);
   margin: 2%;
   /* height: 20% !important; */
 }
 
 .answerDivDeselect:hover {
+  border-radius: var(--radius);
   transition: transform 300ms;
   transform: translate3d(0, calc(1% - 1rem), 0);
   
@@ -314,7 +327,7 @@ h4 {
 }
 
 .h1timer {
-  color: white;  
+  color: var(--purple);  
   font-size: 40px;
 }
 
@@ -352,10 +365,10 @@ h4 {
 .finish {
   animation: Slide_Left_In 1.2s ease;
   text-align: center;
-  color: whitesmoke;
+  color: var(--blue);
   padding: 21%;
   padding-bottom: 30%;
-  background: linear-gradient(to right, #39476e, #313031, #393a3a);
+  background: var(--white);
 }
 
 .backHomeDiv {
