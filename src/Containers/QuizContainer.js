@@ -9,6 +9,7 @@ const QuizContainer = () => {
     const selected = useSelector(state => state.selected);
 
     return (
+        <>
         <div className="app">
             {
                 selected ? null :
@@ -16,9 +17,9 @@ const QuizContainer = () => {
                         <div className="title">
                             <h1>T.Quiz</h1>
                         </div>
-                        <div className="profileButton">
+                        {/* <div className="profileButton">
                             <h2>Profile</h2>
-                        </div>
+                        </div> */}
 
                     </div >
             }
@@ -36,6 +37,8 @@ const QuizContainer = () => {
             </div> */}
 
         </div>
+        
+        </>
 
     );
 }
