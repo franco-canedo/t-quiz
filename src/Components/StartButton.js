@@ -15,7 +15,7 @@ const StartButton = (props) => {
        <div className={menuClassName}>
            <h1>Ready to Play?</h1>
            <br></br>
-           <Button variant="outline-primary" size="lg" block 
+           <Button variant="primary" size="lg" block 
            onClick={() => {
                slideOut();
                setTimeout(() => props.enableTopicMenu(), 1000);

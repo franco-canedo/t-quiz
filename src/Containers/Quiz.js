@@ -51,10 +51,10 @@ const Quiz = () => {
             {
                 finish ?
                     <div className='finish'>
-                        <h1>You got {score/2}/4!</h1>
+                        <h1>You got {score/2}/5!</h1>
                         <div className="backHomeDiv">
                             <Button 
-                            variant="outline-primary" 
+                            variant="primary" 
                             size="lg" block
                             onClick={refresh}>Back to Home</Button>
                         </div>
